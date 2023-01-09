@@ -1,4 +1,4 @@
-import { __prod__ } from "./config"
+import { __prod__, DB_ENGINE, DB_NAME } from "./config"
 import entities from "./entities/index"
 import { MikroORM } from "@mikro-orm/core"
 import path from "path"
@@ -10,8 +10,8 @@ export default {
 		glob: "!(*.d).{js,ts}",
 	},
 	entities,
-	dbName: "webapp2",
+	dbName: DB_NAME,
 	debug: !__prod__,
-	type: "postgresql",
+	type: DB_ENGINE,
 	allowGlobalContext: true,
 } as Parameters<typeof MikroORM.init>[0]

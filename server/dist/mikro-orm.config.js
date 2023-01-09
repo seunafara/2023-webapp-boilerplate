@@ -13,9 +13,9 @@ exports.default = {
         glob: "!(*.d).{js,ts}",
     },
     entities: index_1.default,
-    dbName: "webapp2",
+    dbName: config_1.DB_NAME,
     debug: !config_1.__prod__,
-    type: "postgresql",
+    type: config_1.DB_ENGINE,
     allowGlobalContext: true,
 };
 //# sourceMappingURL=mikro-orm.config.js.map
