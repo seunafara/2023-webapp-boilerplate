@@ -1,4 +1,4 @@
-import { gql } from "apollo-server-express"
+import { gql } from 'apollo-server-express';
 
 export default gql`
 
@@ -7,7 +7,6 @@ export default gql`
 		createdAt: String
 		updatedAt: String
 		email: String
-		password: String
 	}
 
     type FieldError {
@@ -26,5 +25,7 @@ export default gql`
 
 	type Mutation {
 		register(email: String, password: String): UserResponse
+		login(email: String, password: String): UserResponse
+		me: User
 	}
 `
